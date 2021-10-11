@@ -1,46 +1,63 @@
 import Link from 'next/link'
-import  Image  from 'next/image';
+import { useRouter } from 'next/router'
+import { useContext } from 'react'
+import { UserContext } from '@lib/context'
+import { auth } from '@lib/firebase'
+import Image from 'next/image'
 
-const Navbar=()=>{
-    const user={}
-    const username:(string|null)=null
+// Top navbar
+export default function Navbar() {
+  const { user, username } = useContext(UserContext)
 
-    return (
-      <nav className="navbar">
-        <ul>
-          <li>
-            <Link href="/">
-              <button className="btn-blue">FEED</button>
-            </Link>
-          </li>
-          {username ? (
-            <>
-              <li className="push-left">
-                <Link href="/signout">
-                  <button className="btn-blue">Sign out</button>
-                </Link>
-              </li>
-              <li>
-                <Link href="/post">
-                  <button className="btn-blue">Post blog</button>
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${username}`}>
-                  <Image src={'/hacker.png'} alt="user profile" />
-                </Link>
-              </li>
-            </>
-          ) : (
+  const router = useRouter()
+
+  const signOut = () => {
+    auth.signOut()
+    router.reload()
+  }
+
+  return (
+    <nav className="navbar">
+      <ul>
+        <li>
+          <Link href="/">
+            <button className="btn-logo">Dev Log</button>
+          </Link>
+        </li>
+
+        {/* user is signed-in and has username */}
+        {username && (
+          <>
+            <li className="push-left">
+              <button onClick={signOut}>Sign Out</button>
+            </li>
             <li>
-              <Link href="/enter">
-                <button className="btn-blue">Sign Up</button>
+              <Link href="/admin">
+                <button className="btn-blue">Write Posts</button>
               </Link>
             </li>
-          )}
-        </ul>
-      </nav>
-    )
-}
+            <li>
+              <Link href={`/${username}`}>
+                <Image
+                  src={'/authProfile.jpeg'}
+                  alt="image"
+                  height={40}
+                  width={40}
+                />
+              </Link>
+            </li>
+          </>
+        )}
 
-export default Navbar;
+        {/* user is not signed OR has not created username */}
+        {!username && (
+          <li>
+            <Link href="/login">
+              <button className="btn-blue">Log in</button>
+            </Link>
+          </li>
+        )}
+      </ul>
+    </nav>
+  )
+}
