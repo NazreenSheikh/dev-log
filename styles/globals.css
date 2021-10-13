@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 :root {
-    --color-bg: #eef0f1;
-    --color-text: #08090a;
-    --color-blue: #3b49df;
+    --color-bg: #939495;
+    --color-text: darkslateblue;
+    --color-white: #ffffff;
     --color-red: #df3b3b;
     --color-green: #3bdf72;
     --color-gray: #b5bdc4;
@@ -73,7 +73,7 @@ code {
 .navbar {
     height: 70px;
     width: 100%;
-    background: white;
+    background: #939495;
     color: var(--colors-text);
     position: fixed;
     top: 0;
@@ -143,8 +143,8 @@ button[disabled] {
 }
 
 button.btn-blue {
-    background-color: var(--color-blue);
-    color: white;
+    background-color: var(--color-white);
+    color: var(--color-text);
 }
 
 button.btn-red {
@@ -168,9 +168,8 @@ button.btn-google {
 }
 
 button.btn-logo {
-    background-color: var(--color-text);
+    background-color: darkslateblue;
     color: white;
-    text-transform: uppercase;
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
 }
@@ -199,8 +198,8 @@ button.btn-logo {
 }
 
 .card-info {
-    color: white;
-    background: var(--color-blue);
+    color: darkslateblue;
+    background: var(--color-white);
 }
 
 
@@ -208,7 +207,7 @@ button.btn-logo {
 
 .loader {
     border: 10px solid var(--color-bg);
-    border-top: 10px solid var(--color-blue);
+    border-top: 10px solid var(--color-white);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -262,7 +261,7 @@ input[type='file'] {
 
 .text-info {
     font-weight: bold;
-    color: var(--color-blue);
+    color: var(--color-white);
 }
 
 .box {

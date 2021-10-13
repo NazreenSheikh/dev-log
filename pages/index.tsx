@@ -6,7 +6,7 @@ import { firestore, fromMillis, postToJSON } from '@lib/firebase';
 import { useState } from 'react';
 
 // Max post to query per page
-const LIMIT = 10;
+const LIMIT = 15;
 
 export async function getServerSideProps(context) {
   const postsQuery = firestore
@@ -54,12 +54,12 @@ export default function Home(props) {
 
   return (
     <main>
-      <Metatags title="Home Page" description="Get the latest posts on our site" />
+      <Metatags title="dev-log" description="Get the latest article on dev-log" />
 
       <div className="card card-info">
         <h2>Welcome to devlog</h2>
 
-        <p>Sign up for an 👨‍🎤 account, ✍️ write posts, then 💞 heart content created by other users.</p>
+        <p>Sign up for an 👨‍🎤 account, ✍️ write posts, then like the content created by other users.</p>
       </div>
 
       <PostFeed posts={posts} />
