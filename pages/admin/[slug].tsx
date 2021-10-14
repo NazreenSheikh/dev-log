@@ -38,8 +38,8 @@ function PostManager() {
       {post && (
         <>
           <section>
-            <h1>{post.title}</h1>
-            <p>ID: {post.slug}</p>
+            <h1 className="postTitle">{post.title}</h1>
+            <p className="postSlug">ID: {post.slug}</p>
 
             <PostForm
               postRef={postRef}
@@ -97,7 +97,7 @@ function PostForm({ defaultValues, postRef, preview }) {
 
         <textarea
           name="content"
-          ref={register("content",{
+          ref={register({
             maxLength: { value: 20000, message: 'content is too long' },
             minLength: { value: 10, message: 'content is too short' },
             required: { value: true, message: 'content is required' },
