@@ -39,7 +39,7 @@ export default function Navbar() {
             <li>
               <Link href={`/${username}`}>
                 <Image
-                  src={'/authProfile.jpeg'}
+                  src={user?.photoURL ? user.photoURL : '/authProfile.jpeg'}
                   alt="image"
                   height={40}
                   width={40}
