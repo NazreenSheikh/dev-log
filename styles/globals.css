@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
-    --color-bg: #939495;
-    --color-text: darkslateblue;
+    --color-bg: white;
+    --color-text: black;
     --color-white: #ffffff;
     --color-red: #df3b3b;
     --color-green: #3bdf72;
@@ -73,7 +74,7 @@ code {
 .navbar {
     height: 70px;
     width: 100%;
-    background: #939495;
+    background: var(--color-bg);
     color: var(--colors-text);
     position: fixed;
     top: 0;
@@ -143,7 +144,7 @@ button[disabled] {
 }
 
 button.btn-blue {
-    background-color: var(--color-white);
+    background-color: var(--color-gray);
     color: var(--color-text);
 }
 
@@ -168,7 +169,7 @@ button.btn-google {
 }
 
 button.btn-logo {
-    background-color: darkslateblue;
+    background-color: black;
     color: white;
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
@@ -261,7 +262,7 @@ input[type='file'] {
 
 .text-info {
     font-weight: bold;
-    color: var(--color-white);
+    color: var(--color-black);
 }
 
 .box {
