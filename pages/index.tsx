@@ -57,7 +57,7 @@ export default function Home(props) {
       <Metatags title="dev-log" description="Get the latest article on dev-log" />
 
       <div className="card card-info">
-        <h2>Welcome to devlog</h2>
+        <h1>Welcome to devlog</h1>
 
         <p>Sign up for an 👨‍🎤 account, ✍️ write posts, then like the content created by other users.</p>
       </div>

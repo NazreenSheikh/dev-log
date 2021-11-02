@@ -4,6 +4,7 @@ import { UserContext } from '../lib/context';
 
 import { useEffect, useState, useCallback, useContext } from 'react';
 import {debounce} from 'lodash';
+import { useRouter } from 'next/router';
 
 
 // Sign in with Google button
@@ -121,10 +122,20 @@ function UsernameMessage({ username, isValid, loading }) {
 
 export default function Login(props) {
   const { user, username } = useContext(UserContext)
-
+  const router = useRouter();
   // 1. user signed out <SignInButton />
   // 2. user signed in, but missing username <UsernameForm />
   // 3. user signed in, has username <SignOutButton />
+    useEffect(() => {
+        // redirect to home if already logged in
+        if (username) {
+            router.replace(`${username}`);
+        }
+        console.log('working')
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    });
+
   return (
     <main>
       {user ? (
