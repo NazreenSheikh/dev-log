@@ -199,8 +199,8 @@ button.btn-logo {
 }
 
 .card-info {
-    color: darkslateblue;
-    background: var(--color-white);
+    color: var(--color-white);
+    background: black;
 }
 
 
